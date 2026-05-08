@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Users\\\\Pablo\\\\Desktop\\\\qr-code-generator\\\\src\\\\main\\\\java\" -Directory)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}

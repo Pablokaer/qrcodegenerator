@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body class="home">
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <div class="nav-brand">
+            <div class="brand-icon"></div>
+            <span>QR Generator</span>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <p class="hero-badge">Free &amp; Instant</p>
+        <h1 class="hero-title">Generate QR Codes<br/><span class="hero-accent">in seconds</span></h1>
+        <p class="hero-subtitle">Turn any URL, text, or link into a scannable QR code.<br/>No sign-up required.</p>
+
+        <div class="hero-card">
+            <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+            <form action="/generate" method="post">
+                <label class="input-label" for="content">Enter your content</label>
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="content"
+                        name="content"
+                        placeholder="https://example.com or any text..."
+                        required
+                        autofocus
+                    />
+                    <button type="submit" class="btn btn-primary">Generate</button>
+                </div>
+                <p class="input-hint">Works with URLs, plain text, phone numbers, emails and more.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="steps">
+    <div class="section-inner">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Enter your content</h3>
+                <p>Type or paste any URL, text, phone number or email address into the field above.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Generate instantly</h3>
+                <p>Click Generate and your QR code is created and stored in milliseconds.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Download &amp; share</h3>
+                <p>Save your QR code as a PNG file and use it anywhere — print, web, or apps.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="section-inner">
+        <h2 class="section-title">Why use this tool?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon icon-speed"></div>
+                <h3>Lightning fast</h3>
+                <p>QR codes are generated and ready to use in under a second, server-side.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-lock"></div>
+                <h3>No account needed</h3>
+                <p>Just enter your content and hit generate. Zero friction, zero tracking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-img"></div>
+                <h3>PNG export</h3>
+                <p>Download your QR code as a high-quality PNG, ready for any use case.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-text"></div>
+                <h3>Any content</h3>
+                <p>URLs, plain text, emails, phone numbers — if you can type it, we can encode it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <p>QR Code Generator &mdash; Built with Spring Boot &amp; Thymeleaf</p>
+    </div>
+</footer>
+
+</body>
+</html>

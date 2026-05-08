@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>QR Code Generated</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>QR Code Generated</h1>
+        <p class="subtitle">Your QR Code is ready</p>
+    </header>
+
+    <main>
+        <div class="card qr-card">
+            <div class="qr-image-wrapper">
+                <img th:src="${qr.url}" alt="Generated QR Code"/>
+            </div>
+
+            <div class="qr-info">
+                <label>Content</label>
+                <p class="qr-content" th:text="${qr.code}"></p>
+            </div>
+
+            <div class="qr-actions">
+                <a th:href="${qr.url}"
+                   th:download="'qrcode-' + ${qr.id} + '.png'"
+                   class="btn btn-primary">
+                    Download PNG
+                </a>
+                <a href="/" class="btn btn-secondary">Generate another</a>
+                <form th:action="@{/delete/{id}(id=${qr.id})}" method="post"
+                      onsubmit="return confirm('Delete this QR Code?')">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
