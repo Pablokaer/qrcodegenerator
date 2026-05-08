@@ -1,8 +1,0 @@
-com\example\qrcode\QrCodeGeneratorApplication.class
-com\example\qrcode\entity\QrCode.class
-com\example\qrcode\dto\QrRequestDto.class
-com\example\qrcode\service\QrCodeService.class
-com\example\qrcode\util\QrCodeGenerator.class
-com\example\qrcode\controller\QrCodeController.class
-com\example\qrcode\controller\QrViewController.class
-com\example\qrcode\repository\QrCodeRepository.class
